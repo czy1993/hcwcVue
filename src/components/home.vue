@@ -34,7 +34,7 @@
         </div>
       </div>
      </div>
-     <div class="classify classZX">
+     <div class="classify classZX" >
       <div class="classify-tile">
         <img src="static\img\home\6.png" alt="">
         <span>资讯中心</span>
@@ -46,20 +46,30 @@
         </div>
         <div class="classZX-cent-text">
           <div v-for="(item,index) in classZXList">
-            <img src="../../tatic/img/home/18.png" alt="">
+            <img src="../../static/img/home/18.png" alt="">
             <p>{{item}}</p>
             <span>new</span>
           </div>
         </div>
       </div>
-     </div> 
+     </div>
+     <div class="classify  classiVIP">
+       <div class="classify-tile">
+        <img src="static\img\home\6.png" alt="">
+        <span>VIP精品</span>
+        <img src="static\img\home\7.png" alt="">
+        <Vip></Vip>
+      </div>
+    </div> 
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Swiper from 'swiper'
 import Header from './contom/header'
-import Footer from './contom/foorer'
+import Footer from './contom/footer'
+import Vip from './contom/vip'
 export default {
   name: 'HelloWorld',
   data () {
@@ -112,7 +122,8 @@ export default {
   },
   components:{
     Header,
-    Header
+    Footer,
+    Vip
   },
   computed: {
       swiper() {
@@ -140,13 +151,11 @@ export default {
           height: 100%;
         }
     }
-    .swiperDiv{
-      margin-top: -60px;
-    }
     .classify{
       width: 100%;
+      text-align: center;
       .classify-tile{
-        height: 150px;
+        height: 100px;
         padding: 40px;
         span{
               color: #000;
@@ -197,10 +206,60 @@ export default {
     }
     .classZX{
       .classZX-cent{
-        width: 100%;
         height: 500px;
-        display: flex;
-        justify-content: space-around;
+        text-align: left;
+        width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        .classZX-cent-img{
+          float: left;
+          width: 50%;
+          img{
+            height: 500px;
+            width: 100%;
+          }
+        }
+        .classZX-cent-text{
+          float: left;
+          width: 50%;
+          box-sizing: border-box;
+          padding: 30px;
+          background-color: #223248;
+          height: 500px;
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          div{
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              width: 100%;
+              box-sizing: border-box;
+              padding: 25px 0;
+              border-bottom: 1px solid #000;
+              img{
+                margin-right: 20px;
+              }
+              p{
+                font-size: 15px;
+                height: 30px;
+                line-height: 30px;
+              }
+              span{
+                display: inline-block;
+                width: 50px;
+                height: 26px;
+                background-color: #6b2420;
+                margin-left: 5px;
+                color: #fff;
+                text-align: center;
+                line-height: 26px;
+                font-size: 16px;
+                border-radius: 5px;
+              }
+          }
+         
+        }
       }
     }
 </style>
